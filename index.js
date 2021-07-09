@@ -85,6 +85,7 @@ const getSchool = () => {
 
 const addManager = () =>{
     getName()
+
     
 }
 
@@ -124,4 +125,7 @@ const getRole = () => {
     })
 
 }
-getRole();
+addManager();
+// getRole();
+
+
