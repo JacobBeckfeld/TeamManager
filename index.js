@@ -3,6 +3,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const fs = require("fs");
+const generateHTML = require("./utils/genterateHTML");
 
 
 // const questions = [
@@ -305,10 +306,19 @@ const init = () =>{
             case "No":
                 break;
         }
+    }).then((data) =>{
+        writeToFile("index.html", generateHTML(data))
     })
 };
 
-
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err ) =>{
+        if(err){console.log(err)}
+        else{console.log("File made!")}
+    }
+    )
+    
+}
 
 init();
 // getRole(console.log(empArray));
