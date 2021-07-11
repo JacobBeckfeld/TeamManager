@@ -284,7 +284,7 @@ const getRole = () => {
             default:
                 break;
         }
-        return empArray
+        
     })
 
 };
@@ -304,11 +304,14 @@ const init = () =>{
                 break;
 
             case "No":
+                writeToFile("index.html", generateHTML(empArray))
                 break;
+            
+            default:
+                break
         }
-    }).then((data) =>{
-        writeToFile("index.html", generateHTML(data))
     })
+    
 };
 
 function writeToFile(fileName, data) {
